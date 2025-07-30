@@ -1,0 +1,192 @@
+% preamble.tex
+
+%%%%%%%%%%%%%%% Chinese %%%%%%%%%%%%%%%
+%%%%% Uncomment the following lines to use Chinese
+% \usepackage{xeCJK}
+% \usepackage{fontspec}
+%%%%%%%%%%%%%%% Chinese %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% Theme %%%%%%%%%%%%%%%
+\usetheme{CambridgeUS} % try Madrid
+\usecolortheme{beaver} % try beaver, dolphin, seahorse
+% \usefonttheme[onlymath]{serif} % try "professionalfonts"
+\usefonttheme{serif}  % standard font (same with that in ``standalone'')
+% \setCJKmainfont{Microsoft YaHei} % try SimSun
+% \setmainfont{Gill Sans}
+% \setsansfont{Gill Sans}
+
+\usepackage[export]{adjustbox}
+
+\setbeamersize{text margin left = 2em, text margin right = 1em}
+\setbeamercolor{footnote mark}{fg = teal}
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+
+\renewcommand*{\thefootnote}{\alph{footnote}}
+%%%%%%%%%%%%%%% Theme %%%%%%%%%%%%%%%
+
+\usepackage{graphicx, subcaption}
+
+\usepackage{amssymb, pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+%%%%%%%%%%%%%%% Algorithms %%%%%%%%%%%%%%%
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+% for two-column algorithms
+% see https://tex.stackexchange.com/a/159431.
+\usepackage{varwidth}
+
+\newcommand{\code}[2]{#1:#2}
+\newcommand{\hStatex}[0]{\vspace{4pt}}
+\renewcommand\algorithmicthen{}
+\renewcommand\algorithmicdo{}
+
+\algblockdefx[upon]{When}{EndWhen}%
+  [3][Unknown]{\textbf{when for every} #3 \textbf{received a quorum of} #1(#2)}%
+  {\textbf{end}}
+
+\algblockdefx[upon]{WhenReceive}{EndWhenReceive}%
+  [1][Unknown]{\textbf{when received} #1}%
+  {\textbf{end}}
+
+\algblockdefx[upon]{Upon}{EndUpon}%
+  [1][Unknown]{\textbf{upon} #1}%
+  {\textbf{end upon}}
+
+% Remove the end blank line when using noend in conjunction with custom blocks
+% See https://tex.stackexchange.com/a/172065
+\makeatletter
+\ifthenelse{\equal{\ALG@noend}{t}}%
+  {\algtext*{EndWhen}}
+  {}%
+\makeatother
+
+\makeatletter
+\ifthenelse{\equal{\ALG@noend}{t}}%
+  {\algtext*{EndWhenReceive}}
+  {}%
+\makeatother
+
+\makeatletter
+\ifthenelse{\equal{\ALG@noend}{t}}%
+  {\algtext*{EndUpon}}
+  {}%
+\makeatother
+%%%%%%%%%%%%%%% Algorithms %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% Theorems %%%%%%%%%%%%%%%
+% theorems (global numbering)
+\theoremstyle{definition}
+\newtheorem{property}[theorem]{Property}
+\newtheorem{assumption}{\textsc{Assumption}}
+%%%%%%%%%%%%%%% Theorems %%%%%%%%%%%%%%%
+
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{none}{}
+\captionsetup{labelsep = none}
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+%%%%%%%%%%%%%%% Tables %%%%%%%%%%%%%%%
+\usepackage{multirow}
+\newcommand{\incell}[2]{\begin{tabular}[c]{@{}c@{}}#1\\[3pt] #2\end{tabular}}
+%%%%%%%%%%%%%%% Tables %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% Figures %%%%%%%%%%%%%%%
+% for fig without caption: #1: width/size; #2: fig file
+\newcommand{\fig}[2]{
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[#1]{#2}
+  \end{figure}
+}
+
+% for fig with caption: #1: width/size; #2: fig file; #3: fig caption
+\newcommand{\figcap}[3]{
+  \begin{figure}[htp]
+    \centering
+    \includegraphics[#1]{#2}
+    \caption{#3}
+  \end{figure}
+}
+
+\newcommand{\figdouble}[6]{
+  \begin{figure}[h]
+    \centering
+    \begin{subfigure}[c]{#1\textwidth}
+        \centering
+        \includegraphics[width = #2\textwidth]{#3}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[c]{#4\textwidth}
+        \centering
+        \includegraphics[width = #5\textwidth]{#6}
+    \end{subfigure}
+  \end{figure}
+}
+
+%%%%% For Chinese %%%%%
+% \renewcommand\figurename{图:\;}
+% \renewcommand\tablename{表:\;}
+%%%%% For Chinese %%%%%
+%%%%%%%%%%%%%%% Figures %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% TiKZ %%%%%%%%%%%%%%%
+\usepackage[linewidth = 1pt, framemethod = TikZ]{mdframed}
+\mdfsetup{frametitlealignment=\center}
+%%%%%%%%%%%%%%% TiKZ %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% Citation %%%%%%%%%%%%%%%
+% try "backend = bibtex", "backend = biber"
+\usepackage[natbib = true, backend = biber, style = authoryear, maxbibnames = 99]{biblatex}
+\setbeamertemplate{bibliography item}[article]
+\renewcommand*{\bibfont}{\footnotesize}
+% \addbibresource{xxx.bib}
+
+\newcommand{\ncite}[1]{\violet{\footnotesize [\cite{#1}]}}
+%%%%%%%%%%%%%%% Citation %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% Colors %%%%%%%%%%%%%%%
+\usepackage{xcolor}
+
+\definecolor{DarkRed}{rgb}{0.55, 0.0, 0.0}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\purple}[1]{\textcolor{purple}{#1}}
+\newcommand{\cyan}[1]{\textcolor{cyan}{#1}}
+\newcommand{\violet}[1]{\textcolor{violet}{#1}}
+\newcommand{\lgray}[1]{\textcolor{lightgray}{#1}}
+\newcommand{\teal}[1]{\textcolor{teal}{#1}}
+\newcommand{\brown}[1]{\textcolor{brown}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+
+\newcommand{\hl}[2]{\fcolorbox{#1}{#1!60}{#2}}
+%%%%%%%%%%%%%%% Colors %%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%% for appendix %%%%%%%%%%%%%%%%
+% http://www-ljk.imag.fr/membres/Jerome.Lelong/latex/appendixnumberbeamer.sty
+% Reference: http://tex.stackexchange.com/questions/2541/beamer-frame-numbering-in-appendix
+\usepackage{appendixnumberbeamer}
+% Add total frame count to slides, optional. From Stefan,
+% http://www.latex-community.org/forum/viewtopic.php?f=4&t=2173
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill\insertframenumber\,/\,\inserttotalframenumber}
+%%%%%%%%%%%%%% for appendix %%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%% thankyou %%%%%%%%%%%%%%%
+\newcommand{\thankyou}{
+  \begin{frame}[noframenumbering]
+    \begin{center}
+      \fig{width = 0.618\textwidth}{figs/thankyou}
+      \vspace{0.30cm}
+      Hengfeng Wei (hfwei@nju.edu.cn)
+    \end{center}
+  \end{frame}
+}
+%%%%%%%%%%%%%%% thankyou %%%%%%%%%%%%%%%
