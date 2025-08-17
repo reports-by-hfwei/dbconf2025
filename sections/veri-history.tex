@@ -1,2 +1,48 @@
 % veri-history.tex
 
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{itemize}
+    \centering
+    \item \blue{\bf 数据库系统}实现正确了吗?
+  \end{itemize}
+
+  \begin{center}
+    \fig{width = 0.50\textwidth}{figs/correctness}
+  \end{center}
+
+	\begin{center}
+		数据库系统通过\cyan{事务}与\purple{\bf 隔离级别} (Isolation Levels) 保障\red{数据的正确性}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		声称实现了\blue{\bf 快照隔离} (Snapshot Isolation; SI)
+
+		\fig{width = 0.80\textwidth}{figs/db-si}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		但是, 仍存在违反\blue{\bf 快照隔离}的\cyan{\bf 数据异常} (Data Anomalies) 情况
+
+		\fig{width = 0.95\textwidth}{figs/db-si-violations}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		{\Large 黑盒测试: 数据库系统\red{\bf 执行历史}验证问题}
+
+		\fig{width = 0.90\textwidth}{figs/problem}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
