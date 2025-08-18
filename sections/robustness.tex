@@ -2,19 +2,18 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{What is Robustness?}
-  \begin{center}
-    \href{https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{Beamer User Guide}
-  \end{center}
+	数据库鲁棒性常被分为动态鲁棒性和静态鲁棒性两个层次来讨论。
+
+	\begin{itemize}
+		\item 动态鲁棒性研究数据库的某一个弱隔离级别 $I_1$ 下的执行历史 $H$ 是否满足较强的隔离级别 $I_2$（一般是 SER）。如果满足，我们说 $H$ 在 $I_1$ 下是鲁棒的。动态鲁棒性的研究与执行历史验证较为相似。
+		\item 静态鲁棒性研究客户程序 $P$ 在弱隔离级别 $I_1$ 下的所有执行历史是否都满足较强的隔离级别 $I_2$（一般是 SER）。如果满足，我们说 $P$ 在 $I_1$ 下是鲁棒的。例如，如果 $P$ 在 SI 下鲁棒，则我们可以在 SI 下运行 $P$，这可以在保证执行历史满足 SER 的情况下提高系统性能和吞吐率。
+	\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{State of the Art}
 	\input{tables/table-robustness}
-
-	input a table here
-
-	(put the source code for this table in tables/table-robustness.tex)
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
