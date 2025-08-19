@@ -7,6 +7,47 @@
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{Transaction and Isolation Level}
+%   \begin{center}
+%     A transaction is a \blue{\it group} of operations
+%     that are executed \red{atomically}.
+
+%     \vspace{0.30cm}
+% 		% \resizebox{0.55\textwidth}{!}{\input{tikz/isolation-intro-write-skew-tikz}}
+
+%     \vspace{0.20cm}
+%     The isolation levels specify how concurrent transactions \\[2pt]
+%     are isolated from each other.
+%   \end{center}
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Serializability (SER)}
+  \begin{center}
+    All transactions appear to be executed in some total order.
+
+    \vspace{0.30cm}
+		\resizebox{0.50\textwidth}{!}{\input{tikz/isolation-ser-write-skew-tikz}}
+
+    \vspace{0.20cm}
+    However, implementing serializability is too expensive.
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    事务一致性模型是数据库系统与上层业务之间的一种\purple{契约}
+
+    \vspace{0.30cm}
+    \fig{width = 0.60\textwidth}{figs/layers}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
     \red{\LARGE 它们正确吗?}

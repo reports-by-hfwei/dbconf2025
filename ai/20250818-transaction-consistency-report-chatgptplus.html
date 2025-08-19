@@ -1,0 +1,111 @@
+
+<html>
+<head><title>Transaction Consistency Verification 2025</title></head>
+<body>
+<h1>Transaction Consistency Verification in 2025 and Recent Years</h1>
+<p>The table below summarises recent research on verifying database transaction isolation and consistency models. Each paper is categorised according to whether it focuses on checking execution histories, verifying protocols, validating client programs or ensuring robustness. For each work we provide a brief abstract and link to the source.</p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Year</th>
+      <th>Conference/Journal</th>
+      <th>Paper Title</th>
+      <th>Category</th>
+      <th>Abstract</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025</td>
+      <td>arXiv (preprint)</td>
+      <td>VerIso: Verifiable Isolation Guarantees for Database Transactions</td>
+      <td>Protocol verification</td>
+      <td>VerIso introduces a rigorous framework for verifying isolation guarantees using Isabelle/HOL. It models the strict two-phase locking protocol and proves that it provides strict serializability; the authors also use the framework to identify isolation bugs in the TAPIR protocol【601857494417423†L49-L62】.</td>
+      <td>https://arxiv.org/abs/2503.06284</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>CAV 2025</td>
+      <td>On the Complexity of Checking Mixed Isolation Levels for SQL Transactions</td>
+      <td>Execution history verification</td>
+      <td>This work studies the complexity of testing isolation level implementations when transactions use mixed isolation levels in SQL. The authors show that many restrictions are NP-complete and propose an algorithm that is exponential-time in general but polynomial-time for relevant cases【296729877842262†L61-L72】.</td>
+      <td>https://link.springer.com/chapter/10.1007/978-3-031-56568-4_33</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>TACAS 2025</td>
+      <td>Pushing the Limit: Verified Performance-Optimal Causally-Consistent Database Transactions</td>
+      <td>Protocol verification</td>
+      <td>The authors design Eiger-PORT+, a protocol that achieves a strong form of causal consistency (TCCv). They deductively verify the protocol and show through experiments that it achieves superior performance compared with existing solutions【253534846932426†L84-L100】.</td>
+      <td>https://link.springer.com/chapter/10.1007/978-3-031-57245-3_22</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>OOPSLA 2024</td>
+      <td>Plume: Efficient and Complete Black-Box Checking of Weak Isolation Levels</td>
+      <td>Execution history verification</td>
+      <td>Plume provides a modular black-box checker for weak isolation levels. It uses vector clocks and tree clocks to capture dependencies, reproduces known isolation violations and discovers new ones in several DBMSs; it detects more anomalies than prior tools【741389624480861†L259-L276】.</td>
+      <td>https://dl.acm.org/doi/10.1145/3622673</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>PLDI 2025</td>
+      <td>Dynamic Robustness Verification Against Weak Memory</td>
+      <td>Client program robustness verification</td>
+      <td>The paper proposes a dynamic verification algorithm using location clocks to check whether a program remains correct under C11-style memory models. The tool RSAN checks program executions against the memory model; evaluation shows the approach can verify robustness with modest overheads【633860105723204†L49-L63】.</td>
+      <td>https://arxiv.org/abs/2504.15036</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>arXiv (preprint)</td>
+      <td>Vbox: Efficient Black-Box Serializability Verification</td>
+      <td>Execution history verification</td>
+      <td>Vbox proposes a new black-box serializability verification technique that supports predicate operations. By using transaction time information and a simpler SAT formulation, Vbox efficiently verifies serializability across different protocols【993289605217548†L61-L74】.</td>
+      <td>https://arxiv.org/abs/2503.05163</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>ICSE 2024</td>
+      <td>Understanding Transaction Bugs in Database Systems</td>
+      <td>Client program verification</td>
+      <td>This empirical study analyzes 140 transaction bugs from MySQL, PostgreSQL, SQLite and other systems. The authors categorize bug manifestations, root causes and impacts, and provide guidance for detection and verification techniques【135599895351687†L410-L421】.</td>
+      <td>https://doi.org/10.1145/3597503.3623390</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>ICSE 2023</td>
+      <td>Detecting Isolation Bugs via Transaction Oracle Construction (Troc)</td>
+      <td>Execution history verification</td>
+      <td>Troc decouples a transaction into independent statements executed on separate views according to the claimed isolation level. Divergence between the views indicates an isolation bug; Troc detected new isolation bugs in MySQL, MariaDB and TiDB【978953426573862†L423-L440】.</td>
+      <td>https://doi.org/10.1109/ICSE43902.2023.00150</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>ISSTA 2025</td>
+      <td>Detecting Isolation Anomalies in Relational DBMSs</td>
+      <td>Execution history verification</td>
+      <td>IsoRel is a novel black-box isolation checker that supports relational data models and complex SQL. It records the data rows accessed by each SQL statement using auxiliary columns, constructs transaction dependency graphs and identifies isolation anomalies. Evaluations on five DBMSs discovered 48 unique anomalies【917122697200702†L172-L191】.</td>
+      <td>https://doi.org/10.1145/3728953</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>PVLDB 2025 (preprint)</td>
+      <td>TxnSails: Achieving Serializable Transaction Scheduling with Self-Adaptive Isolation Level Selection</td>
+      <td>Client program robustness verification</td>
+      <td>TxnSails is a middle-tier solution that achieves serializable scheduling with self-adaptive isolation level selection. It unifies concurrency control to achieve serializability at lower isolation levels, employs deep learning to balance performance benefits against overhead and uses cross-isolation validation to ensure serializability. Experiments show up to 26.7× speedups over state-of-the-art solutions【747100117477040†L12-L29】.</td>
+      <td>https://arxiv.org/abs/2502.00991</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Key Trends and Insights:</strong></p>
+<ul>
+<li><strong>Shift towards black-box verification:</strong> Works such as Plume, Vbox and IsoRel build on the idea of black-box testing, where the checker only observes transaction inputs and outputs. These tools use sophisticated dependency tracking (vector clocks, tree clocks or dependency graphs) to detect anomalies and support complex SQL operations in relational DBMSs【741389624480861†L259-L276】【917122697200702†L172-L191】.</li>
+<li><strong>Formal verification of protocols:</strong> Protocol-oriented research like VerIso and Eiger-PORT+ applies formal methods to prove that concurrency control protocols satisfy strict serializability or strong causal consistency. These works model realistic protocols in theorem provers and reveal subtle bugs in widely used protocols like TAPIR【601857494417423†L49-L62】【253534846932426†L84-L100】.</li>
+<li><strong>Complexity analysis and algorithm design:</strong> The CAV 2025 paper highlights the computational hardness of verifying mixed isolation levels and proposes efficient algorithms for practical cases【296729877842262†L61-L72】. Such complexity analyses guide tool designers to focus on tractable subclasses.</li>
+<li><strong>Client-program and robustness verification:</strong> Recent efforts go beyond database internals to ensure that client applications remain correct under weak isolation or memory models. Dynamic robustness verification for weak memory models and TxnSails’ adaptive isolation level selection illustrate this trend【633860105723204†L49-L63】【747100117477040†L12-L29】.</li>
+<li><strong>Empirical studies and bug analysis:</strong> Large-scale studies of transaction bugs provide valuable insights into common error patterns and inform the design of testing tools. <em>Understanding Transaction Bugs in Database Systems</em> and Troc contribute extensive datasets and detection approaches【135599895351687†L410-L421】【978953426573862†L423-L440】.</li>
+</ul>
+<p>Overall, the frontier of transaction consistency verification in 2025 is characterised by a combination of formal verification, black-box testing, adaptive scheduling techniques and empirical studies. These developments point toward more comprehensive tools that can verify complex isolation levels across heterogeneous DBMSs and help developers reason about transactional correctness in modern applications.</p>
+</body>
+</html>
