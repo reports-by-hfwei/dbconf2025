@@ -60,15 +60,37 @@
 		\item 在高度冲突的工作负载下性能优势减弱。
 	\end{itemize}
 
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{figs/split-sche}
+	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{arXiv2025 2501.18377v3 Using Read Promotion and Mixed Isolation Levels for Performant Yet Serializable Execution of Transaction Programs}
-	\textbf{Problems: } 许多 DBMS 默认使用 SI 等较低的隔离级别，以换取更高的性能。但这将处理并发异常（如写偏斜）的责任推给了应用程序开发者。目前的挑战在于，如何在不牺牲性能的前提下，为事务程序提供可串行化的正确性保证，从而简化开发。
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\textbf{Contributions: }
+			\begin{itemize}
+				\item 在 TODS2025 的鲁棒性理论基础之上引入了读提升（Read Promotion）操作，即把部分的 Read 操作换成 Update 操作以获得排它锁；
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=0.98\linewidth]{figs/lowest-robust-allocations}
+		\end{column}
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
 
-
-	\textbf{Contributions: }一种在多版本数据库中系统性地分配隔离级别给事务的框架，能够根据事务行为，自动分配最合适的隔离级别，在确保在所需正确性的前提下最大化性能。
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{arXiv2025 2501.18377v3 Using Read Promotion and Mixed Isolation Levels for Performant Yet Serializable Execution of Transaction Programs}
+	\textbf{Contributions: }
+	\begin{itemize}
+		\item 开发了一个原型系统 RePMILA，大幅提高系统吞吐率。
+	\end{itemize}
+	\begin{center}
+		\includegraphics[width=0.7\linewidth]{figs/throughput}
+	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -94,7 +116,9 @@
 	\begin{itemize}
 		\item 面向动态工作负载的自适应隔离级别选择机制：将工作负载特征建模为依赖图，利用 GNN 学习低隔离级别的性能收益与维持 SER 的开销之间的权衡关系，并实时预测未来工作负载的最优隔离级别（RC, SI 或 SER）。
 	\end{itemize}
-	\includegraphics[width=0.8\linewidth]{figs/TxnSails-selection-model}
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{figs/TxnSails-selection-model}
+	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
