@@ -36,7 +36,7 @@
 \begin{frame}{TODS2025 Allocating Isolation Levels to Transactions in a Multiversion Setting}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
-			\textbf{Techniques (basic ideas): }分析事务的访问模式（读集和写集），动态识别潜在的冲突依赖环：
+			\textbf{Basic Ideas: }分析事务的访问模式（读集和写集），动态识别潜在的冲突依赖环：
 			\begin{itemize}
 				\item 对只读事务，安全分配 RC 以实现高吞吐量；
 				\item 对可能产生依赖环的事务，自动提升隔离级别至 SI 或 SER；
@@ -65,12 +65,60 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{arXiv2025 2501.18377v3 Using Read Promotion and Mixed Isolation Levels for Performant Yet Serializable Execution of Transaction Programs}
-	background, problems, contributions, techniques (basic ideas), limitations
+	\textbf{Problems: } 许多 DBMS 默认使用 SI 等较低的隔离级别，以换取更高的性能。但这将处理并发异常（如写偏斜）的责任推给了应用程序开发者。目前的挑战在于，如何在不牺牲性能的前提下，为事务程序提供可串行化的正确性保证，从而简化开发。
+
+
+	\textbf{Contributions: }一种在多版本数据库中系统性地分配隔离级别给事务的框架，能够根据事务行为，自动分配最合适的隔离级别，在确保在所需正确性的前提下最大化性能。
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{VLDB2025 TxnSails-Achieving Serializable Transaction Scheduling with Self-Adaptive Isolation Level Selection}
-	background, problems, contributions, techniques (basic ideas), limitations
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\textbf{Contributions: }
+			\begin{itemize}
+				\item 实现低隔离级别下的可串行化：在运行时细粒度地跟踪单个事务的读写依赖，并通过调度提交顺序（或必要时中止事务）来确保提交顺序与依赖顺序一致。相比静态修改 SQL（如加锁升级），这种方法减少了不必要的冲突和开销。
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=0.98\linewidth]{figs/TxnSails-txn-proc}
+		\end{column}
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{VLDB2025 TxnSails-Achieving Serializable Transaction Scheduling with Self-Adaptive Isolation Level Selection}
+	\textbf{Contributions: }
+	\begin{itemize}
+		\item 面向动态工作负载的自适应隔离级别选择机制：将工作负载特征建模为依赖图，利用 GNN 学习低隔离级别的性能收益与维持 SER 的开销之间的权衡关系，并实时预测未来工作负载的最优隔离级别（RC, SI 或 SER）。
+	\end{itemize}
+	\includegraphics[width=0.8\linewidth]{figs/TxnSails-selection-model}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{VLDB2025 TxnSails-Achieving Serializable Transaction Scheduling with Self-Adaptive Isolation Level Selection}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\textbf{Contributions: }
+			\begin{itemize}
+				\item 跨隔离级别验证机制：当系统根据预测需要切换隔离级别时，检测可能出现的新的危险结构避免破坏 SER；并通过确保提交顺序与依赖顺序一致（必要时中止事务）来保证切换过程中的可串行化，且避免了长时间的阻塞或高中止率。
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\includegraphics[width=0.98\linewidth]{figs/TxnSails-cross-isolation}
+		\end{column}
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{VLDB2025 TxnSails-Achieving Serializable Transaction Scheduling with Self-Adaptive Isolation Level Selection}
+	\textbf{Limitations: }
+	\begin{itemize}
+		\item 暂时没有发现
+	\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
