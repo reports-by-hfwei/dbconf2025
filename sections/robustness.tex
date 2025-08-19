@@ -19,16 +19,9 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{TODS2025 Allocating Isolation Levels to Transactions in a Multiversion Setting}
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\textbf{Problems: }开发人员手动为每类的事务选择隔离级别具有挑战性。选择过于保守，会严重影响吞吐量；选择较低的隔离级别，则需要复杂的并发逻辑来避免异常。
+	\textbf{Problems: }开发人员手动为每类的事务选择隔离级别具有挑战性。选择过于保守，会严重影响吞吐量；选择较低的隔离级别，则需要复杂的并发逻辑来避免异常。
 
-			\textbf{Contributions: }一种在多版本数据库中系统性地分配隔离级别给事务的框架，能够根据事务行为，自动分配最合适的隔离级别，在确保在所需正确性的前提下最大化性能。
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\includegraphics[width=0.98\linewidth]{figs/lowest-robust-allocations}
-		\end{column}
-	\end{columns}
+	\textbf{Contributions: }一种在多版本数据库中系统性地分配隔离级别给事务的框架，能够根据事务行为，自动分配最合适的隔离级别，在确保在所需正确性的前提下最大化性能。
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
