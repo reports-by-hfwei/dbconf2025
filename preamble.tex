@@ -28,10 +28,12 @@
 
 \usepackage{graphicx, subcaption}
 
-\usepackage{amssymb, pifont}
+\usepackage{amssymb, pifont, latexsym}
 \newcommand{\cmark}{\ding{51}}
 \newcommand{\xmark}{\ding{55}}
 
+\usepackage{bbding} % for checkmark and xsolid
+\usepackage{mathtools}
 %%%%%%%%%%%%%%% Algorithms %%%%%%%%%%%%%%%
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
@@ -43,40 +45,6 @@
 \newcommand{\hStatex}[0]{\vspace{4pt}}
 \renewcommand\algorithmicthen{}
 \renewcommand\algorithmicdo{}
-
-\algblockdefx[upon]{When}{EndWhen}%
-  [3][Unknown]{\textbf{when for every} #3 \textbf{received a quorum of} #1(#2)}%
-  {\textbf{end}}
-
-\algblockdefx[upon]{WhenReceive}{EndWhenReceive}%
-  [1][Unknown]{\textbf{when received} #1}%
-  {\textbf{end}}
-
-\algblockdefx[upon]{Upon}{EndUpon}%
-  [1][Unknown]{\textbf{upon} #1}%
-  {\textbf{end upon}}
-
-% Remove the end blank line when using noend in conjunction with custom blocks
-% See https://tex.stackexchange.com/a/172065
-\makeatletter
-\ifthenelse{\equal{\ALG@noend}{t}}%
-  {\algtext*{EndWhen}}
-  {}%
-\makeatother
-
-\makeatletter
-\ifthenelse{\equal{\ALG@noend}{t}}%
-  {\algtext*{EndWhenReceive}}
-  {}%
-\makeatother
-
-\makeatletter
-\ifthenelse{\equal{\ALG@noend}{t}}%
-  {\algtext*{EndUpon}}
-  {}%
-\makeatother
-%%%%%%%%%%%%%%% Algorithms %%%%%%%%%%%%%%%
-
 %%%%%%%%%%%%%%% Theorems %%%%%%%%%%%%%%%
 % theorems (global numbering)
 \theoremstyle{definition}
@@ -137,6 +105,17 @@
 %%%%%%%%%%%%%%% Figures %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%% TiKZ %%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{calc, trees, positioning, arrows, arrows.meta,
+  chains, shapes.geometric, decorations.pathreplacing,
+  decorations.pathmorphing, shapes, matrix, shapes.symbols, fit}
+\tikzset{onslide/.code args={<#1>#2}{%
+  \only<#1>{\pgfkeysalso{#2}} % \pgfkeysalso doesn't change the path
+}}
+\tikzset{temporal/.code args={<#1>#2#3#4}{%
+  \temporal<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}{\pgfkeysalso{#4}} % \pgfkeysalso doesn't change the path
+}}
+
 \usepackage[linewidth = 1pt, framemethod = TikZ]{mdframed}
 \mdfsetup{frametitlealignment=\center}
 %%%%%%%%%%%%%%% TiKZ %%%%%%%%%%%%%%%
@@ -152,7 +131,7 @@
 %%%%%%%%%%%%%%% Citation %%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%% Colors %%%%%%%%%%%%%%%
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 
 \definecolor{DarkRed}{rgb}{0.55, 0.0, 0.0}
 

@@ -2,7 +2,32 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.85\textwidth}{figs/db-si}
+  \begin{center}
+    \red{事务}是数据库系统中的核心概念，支撑在线交易顺利进行
+  \end{center}
+
+  \begin{columns}
+    \column{0.50\textwidth}
+      \fig{width = 0.95\textwidth}{figs/db-si}
+    \column{0.50\textwidth}
+      \fig{width = 0.95\textwidth}{figs/acid}
+  \end{columns}
+
+  \vspace{0.30cm}
+  \begin{center}
+    \red{隔离性}要求并发执行的事务互不干扰, 避免上层业务产生数据异常
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    强弱不同的隔离级别, 也称\red{事务一致性模型}
+
+    \vspace{0.30cm}
+    \fig{width = 0.70\textwidth}{figs/tcm}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -23,16 +48,43 @@
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Serializability (SER)}
+\begin{frame}{}
   \begin{center}
-    All transactions appear to be executed in some total order.
+    \red{可串行化 (SER):}
+    所有事务的执行结果与某个串行执行的结果一致
 
-    \vspace{0.30cm}
+    \vspace{0.50cm}
 		\resizebox{0.50\textwidth}{!}{\input{tikz/isolation-ser-write-skew-tikz}}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{快照隔离 (SI):} 弱于 SER, 允许\blue{\it 写偏斜}数据异常
+
+    \vspace{0.50cm}
+		\resizebox{0.50\textwidth}{!}{\input{tikz/isolation-si-write-skew-tikz}}
 
     \vspace{0.20cm}
-    However, implementing serializability is too expensive.
+    \violet{快照读性质:} 每个事务从它开始时的数据库{\it 快照}中读取数据
   \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \begin{center}
+    \red{快照隔离 (SI):} 弱于 SER, 但不允许\blue{\it 更新丢失}数据异常
+
+    \vspace{0.30cm}
+    \resizebox{0.48\textwidth}{!}{\input{tikz/isolation-si-lost-update-tikz}}
+  \end{center}
+
+  \vspace{-0.50cm}
+  \violet{快照写性质:}
+    并发事务之间不能存在写冲突; 最多只有一个可以提交
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -50,30 +102,16 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    \red{\LARGE 它们正确吗?}
+    以事务一致性模型为核心的正确性问题
 
-    \fig{width = 0.50\textwidth}{figs/bug}
+    \vspace{0.50cm}
+    \fig{width = 0.60\textwidth}{figs/correctness}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \begin{center}
-    \fig{width = 0.70\textwidth}{figs/correctness}
-  \end{center}
-
-  \begin{itemize}
-    \centering
-    \setlength{\itemsep}{10pt}
-    \item \blue{\bf 数据库系统}实现正确了吗?
-    \item \red{\bf 客户端程序}编写正确了吗?
-  \end{itemize}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-	\fig{width = 0.95\textwidth}{figs/roadmap}
+  \fig{width = 0.75\textwidth}{figs/verification-problems}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
