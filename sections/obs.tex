@@ -1,0 +1,152 @@
+% obs.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		\blue{\textsc{Troubadour}:OOPSLA2025}
+		\fig{width = 0.60\textwidth}{figs/obs-oopsla2025}
+
+		\pause
+		\vspace{0.50cm}
+		\fig{width = 0.90\textwidth}{figs/obs-history}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		\fig{width = 0.80\textwidth}{figs/obs-flow}
+
+		\pause
+		\vspace{0.50cm}
+		\red{假设:} 所有事务按照提交时间戳先后顺序进行执行
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\[
+		T_{1}\quad T_{2}\quad T_{3}\quad \ldots\quad T_{n}
+	\]
+	\begin{columns}
+		\column{0.40\textwidth}
+			\fig{width = 0.90\textwidth}{figs/obs-flow}
+		\column{0.60\textwidth}
+		  \begin{itemize}
+				\item $o_{i}$: observed response after $T_{i}$
+				\item $d_{i}$: system state after $T_{i}$
+				\item $r_{i}$: expected response after $T_{i}$
+				\item $C_{i}$: semantic constraints on $\tuple{d_{i}, r_{i}}$
+				\item \red{$\id_{i}^{x} = j$}: $T_{i}$ reads $x$ from $T_{j}$
+			\end{itemize}
+	\end{columns}
+	\pause
+	\[
+		\tuple{(d_{1}, r_{1})} \cdot C_{1} \quad
+		\tuple{(d_{2}, r_{2})} \cdot C_{1} \quad
+		\tuple{(d_{3}, r_{3})} \cdot C_{2} \quad\ldots\quad
+		\tuple{(d_{n}, r_{n})} \cdot C_{n}
+	\]
+	\pause
+	\[
+		\phi \equiv \bigwedge_{i=1}^{n} C_{i} \land (r_{i} = o_{i})
+	\]
+	\pause
+	\[
+		\psi: \text{Isolation Correctness Constraint}
+	\]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\[
+		d_{0}[\acctone] = 100 \quad d_{0}[\accttwo] = 300 \qquad \blue{\text{(Strong SI)}}
+	\]
+	\fig{width = 0.90\textwidth}{figs/obs-history}
+	\pause
+	\[
+		d_{1}[\acctone] = 90 \quad
+		d_{1}[\accttwo] = 310 \quad
+		r_{1} \equiv \bot \quad
+		\cons_{1} \equiv \true \quad
+		\psi \equiv \true
+	\]
+	\vspace{-0.30cm}
+	\pause
+	\[
+		% d_{2}[\acctone] = 90 \quad
+		d_{2}[\accttwo] = ite(\id_{2}^{\accttwo} \ge 1, 410, 400) \quad
+		r_{2} = \bot \quad
+		\cons_{2} \equiv \true \quad
+		\psi \equiv \id_{2}^{\accttwo} = 1
+	\]
+	\vspace{-0.40cm}
+	\[
+		\phi \land \psi \equiv \id_{2}^{\accttwo} = 1 \equiv \green{\true}
+	\]
+	\pause
+	\[
+		d_{3}[\accttwo] = \ite(\id_{3}^{\accttwo} \ge 2,
+		  \ite(\id_{2}^{\accttwo} \ge 1, 410, 400),
+			\ite(\id_{3}^{\accttwo} \ge 1, 310, 300)) + 10
+	\]
+	\vspace{-0.40cm}
+	\[
+		\psi \equiv \id_{3}^{\accttwo} = 1 \land
+		  ite(\id_{2}^{\accttwo} \ge 1, 410, 400) = d_{3}[\accttwo]
+	\]
+	\vspace{-0.40cm}
+	\[
+		\phi \land \psi \equiv \red{\false}
+	\]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\[
+		T_{1}\quad T_{2}\quad \red{T_{3} (\no)}\quad T_{4}
+	\]
+	\fig{width = 0.90\textwidth}{figs/obs-history}
+
+	\pause
+	\[
+		r_{4}^{\accttwo} = \ite(\id_{4}^{\accttwo} \ge 3,
+		  \ite(\id_{2}^{\accttwo} \ge 1, 410, 400),
+			\ite(\id_{4}^{\accttwo}) \ge 1, 310, 300)
+	\]
+	\pause
+	\vspace{-0.40cm}
+	\[
+		\phi_{4} \equiv r_{4}^{\accttwo} = 420
+	\]
+	\pause
+	\vspace{-0.40cm}
+	\[
+		\phi \land \psi \equiv \red{\false}
+	\]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\fig{width = 0.75\textwidth}{figs/obs-semantics}
+	\fig{width = 0.70\textwidth}{figs/obs-isolation}
+	% \begin{columns}
+	% 	\column{0.50\textwidth}
+	% 	  \fig{width = 0.95\textwidth}{figs/obs-semantics}
+	% 	\column{0.50\textwidth}
+	% 	  \fig{width = 0.95\textwidth}{figs/obs-isolation}
+	% \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\fig{width = 0.90\textwidth}{figs/obs-bank}
+	\fig{width = 0.90\textwidth}{figs/obs-benchmark}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
