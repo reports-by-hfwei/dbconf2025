@@ -1,0 +1,78 @@
+% mil.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		\blue{MIL:arXiv2025}
+		\fig{width = 0.60\textwidth}{figs/mil-cav2025}
+
+		\vspace{0.50cm}
+		\textsc{Select} \\[5pt]
+		\red{\textsc{Insert} \qquad \textsc{Delete} \qquad \textsc{Update}}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		\fig{width = 0.50\textwidth}{figs/mil-full-history}
+
+		\uncover<3->{
+			\begin{definition}[Full History and Client History]
+			\end{definition}
+		}
+
+		\uncover<2->{\fig{width = 0.60\textwidth}{figs/mil-client-history}}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		Specifying isolation levels
+		using \textsf{\purple{so}}, \textsf{\green{wr}}, and \textsf{\brown{co}}
+		\fig{width = 0.70\textwidth}{figs/mil-def}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{theorem}[验证复杂度]
+		Verifying consistency of \red{client histories}
+		with $\ge \rc$ and a fixed number of $\ge 3$ sessions
+		is \textsf{NP-complete},
+		even \blue{irrespectively} of the complexity of these predicates.
+	\end{theorem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{columns}
+		\column{0.50\textwidth}
+			\fig{width = 0.90\textwidth}{figs/mil-cav2025}
+		\column{0.50\textwidth}
+			\fig{width = 0.70\textwidth}{figs/mil-rc-si-ser}
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{columns}
+		\column{0.50\textwidth}
+		  \fig{width = 0.95\textwidth}{figs/mil-alg3}
+		\column{0.50\textwidth}
+		  \fig{width = 0.95\textwidth}{figs/mil-alg4}
+	\end{columns}
+
+	\pause
+	\vspace{0.50cm}
+	\begin{center}
+		\red{$Q:$ 可否用于加速基于 SMT 求解器的验证过程?}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
