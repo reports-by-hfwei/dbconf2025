@@ -1,0 +1,90 @@
+% timekiller.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		\blue{\chronos\&\aion:ICDE2025}
+		\fig{width = 0.80\textwidth}{figs/timekiller-icde2025}
+
+		\vspace{0.50cm}
+		\begin{itemize}
+			\item Using \emph{commit timestamps} to infer the commit order
+			\item Using \emph{start timestamps} to infer the read snapshot (for \si)
+			\item Online verification by \emph{\purple{simulating}} transaction execution
+		\end{itemize}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{columns}
+		\column{0.50\textwidth}
+		  \fig{width = 1.00\textwidth}{figs/chronos-alg}
+		\column{0.50\textwidth}
+		  \fig{width = 1.00\textwidth}{figs/timekiller-example}
+	\end{columns}
+
+	\pause
+	examples for data structures
+
+	\pause
+	\vspace{0.30cm}
+	\[
+		O(n \log n + m) \quad
+		(n: \text{\#transactions}, m: \text{\#operations})
+	\]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\fig{width = 0.95\textwidth}{figs/aion-alg}
+	\begin{columns}
+		\column{0.50\textwidth}
+		  \begin{itemize}
+				\item unstability of \extaxiom
+				\item re-checking due to asynchrony
+				\item garbage collection
+			\end{itemize}
+		\column{0.50\textwidth}
+		  \fig{width = 0.90\textwidth}{figs/timekiller-example}
+	\end{columns}
+
+	\pause
+	examples for data structures
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\fig{width = 0.70\textwidth}{figs/timekiller-flow}
+	\begin{columns}
+		\column{0.33\textwidth}
+		  \fig{width = 0.70\textwidth}{figs/tidb}
+			\centerline{CDC + logging}
+		\column{0.33\textwidth}
+		  \fig{width = 0.70\textwidth}{figs/ydb}
+			\centerline{WAL}
+		\column{0.33\textwidth}
+		  \fig{width = 0.70\textwidth}{figs/dgraph}
+			\centerline{HTTP responses}
+	\end{columns}
+	% \begin{itemize}
+	% 	\item TiDB:
+	% 	\item YugabyteDB:
+	% 	\item Dgraph:
+	% \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{columns}
+		\column{0.50\textwidth}
+			\fig{width = 0.95\textwidth}{figs/chronos-runtime}
+		\column{0.50\textwidth}
+			\fig{width = 0.95\textwidth}{figs/aion-throughput}
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
