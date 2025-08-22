@@ -1,0 +1,79 @@
+% vbox.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		\blue{Vbox:arXiv2025}
+		\fig{width = 0.60\textwidth}{figs/vbox-arxiv2025}
+	\end{center}
+	\begin{center}
+		(1) 建模执行历史
+		\fig{width = 0.50\textwidth}{figs/vbox-history}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		(2) 定义谓词依赖关系与依赖图
+		\fig{width = 0.50\textwidth}{figs/vbox-pred-deps}
+
+		\pause
+		\red{$Q:$ 不同文献, 不同定义方式, 是否都等价?}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		(3) 定义黑盒验证问题
+	\end{center}
+	\begin{columns}
+		\column{0.50\textwidth}
+			\fig{width = 0.95\textwidth}{figs/vbox-verify}
+		\column{0.50\textwidth}
+		  \pause
+			\begin{theorem}[Serializability Theorem]
+				An \blue{observed history} is serializable if and only if
+				there exists a compatible \purple{complete history}
+				whose DSG has \red{no cycles}, and there are neither
+				aborted reads nor intermediate reads.
+			\end{theorem}
+			\pause
+			\begin{center}
+				\red{然而, 没有文献给出过严格证明!}
+			\end{center}
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		(4) 编码黑盒验证问题
+	\end{center}
+	\begin{columns}
+		\column{0.50\textwidth}
+		  \[
+				\mathbb{F}_{x} = \set{t \mid t \vdash \writeevent(x, v)
+				  \land P_{t}(x, v) = \bot}
+			\]
+		  \[
+				\mathbb{T}_{x} = \set{t \mid t \vdash \writeevent(x, v)
+				  \land P_{t}(x, v) = \top}
+			\]
+			\[
+				\mathcal{E}(t) = \set{}
+			\]
+		\column{0.50\textwidth}
+		  \pause
+		  \begin{center}
+				Constraint Pruning
+				\fig{width = 0.60\textwidth}{figs/optimization}
+				Efficient Reachability Test
+			\end{center}
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
