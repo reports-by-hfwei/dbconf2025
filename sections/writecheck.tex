@@ -1,0 +1,72 @@
+% writecheck.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		\blue{WriteCheck:VLDB2025}
+		\fig{width = 0.60\textwidth}{figs/writecheck-vldb2025}
+
+		\vspace{0.30cm}
+		\begin{itemize}
+			\item Propose \emph{write-specific serializability} (WSS), weaker than \ser
+			\item WSS can be applied on all isolation levels defined by Adya
+			\item To verify histories against WSS
+		\end{itemize}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\fig{width = 0.50\textwidth}{figs/adya-isolation-levels}
+	\fig{width = 0.80\textwidth}{figs/adya-pl1}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{definition}[Write-Specific Serializability (WSS)]
+		A schedule of \blue{\it concurrent} transactions
+		should produce \purple{\it the same final database state}
+		as that produced by a corresponding \blue{\it serial} schedule
+		of the same transactions.
+	\end{definition}
+
+	\pause
+	\vspace{0.30cm}
+	\begin{itemize}
+		\item How effectively can WSS expose critical txBugs?
+		\item How are WSS violations triggered?
+		\item How to infer the serial schedules under WSS?
+	\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\fig{width = 0.80\textwidth}{figs/writecheck-35-32}
+	\fig{width = 0.80\textwidth}{figs/writecheck-finding1}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\fig{width = 0.80\textwidth}{figs/writecheck-finding3}
+	\fig{width = 0.80\textwidth}{figs/writecheck-finding4}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\fig{width = 0.80\textwidth}{figs/writecheck-finding2}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\fig{width = 0.85\textwidth}{figs/writecheck-flow}
+
+	\pause
+	\fig{width = 0.75\textwidth}{figs/writecheck-anomalies}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
