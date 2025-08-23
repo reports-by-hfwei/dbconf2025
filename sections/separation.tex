@@ -2,24 +2,45 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.75\textwidth}{figs/veri-protocol}
+	\begin{center}
+		\blue{SeparationLogic:ICFP2025}
+		\fig{width = 0.80\textwidth}{figs/separation-icfp2025}
+		\begin{columns}
+			\column{0.50\textwidth}
+				\fig{width = 0.60\textwidth}{figs/sl-cacm}
+			\column{0.50\textwidth}
+				\fig{width = 0.40\textwidth}{figs/aneris}
+				\centerline{\ru, \rc, \si}
+		\end{columns}
+	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.75\textwidth}{figs/veri-protocol}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fig{width = 0.75\textwidth}{figs/veri-protocol}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \fig{width = 0.75\textwidth}{figs/veri-protocol}
+	\begin{center}
+		\[
+			\ru \sqsubseteq \rc \sqsubseteq \si
+		\]
+		\fig{width = 0.65\textwidth}{figs/case-study}
+		\begin{columns}
+			\column{0.50\textwidth}
+			  \pause
+				\fig{width = 0.60\textwidth}{figs/write-skew}
+				\vspace{-0.30cm}
+				\[
+					\texttt{Write Skew} \models \si
+					  \quad \text{\blue{\small (Client Program)}}
+				\]
+			\column{0.50\textwidth}
+			  \pause
+				\fig{width = 0.45\textwidth}{figs/si-protocol}
+				\vspace{-0.30cm}
+				\[
+					\texttt{SI Protocol} \models \si
+					  \quad \text{\blue{\small (Protocol)}}
+				\]
+		\end{columns}
+	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
