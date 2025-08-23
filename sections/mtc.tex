@@ -2,20 +2,68 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+	\begin{center}
+		\blue{MTC:ICSE2025}
+		\fig{width = 0.80\textwidth}{figs/mtc-icde2025}
+
+		\vspace{0.30cm}
+		\begin{itemize}
+			\item Isolation: \sser, \ser, \si
+			\item End-to-End Checking: history generation + history verification
+			\item via Mini-Transactions: less aborts + more efficient verification
+		\end{itemize}
+	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+	\begin{definition}[Mini-Transaction]
+		\begin{itemize}
+			\item Containing $1-2$ read operations and $\le 2$ write operations.
+			\item Each write operation is preceded by a read on the same object.
+		\end{itemize}
+	\end{definition}
+
+	\fig{width = 0.60\textwidth}{figs/mtc-def}
+
+	\begin{definition}[Mini-Transaction History]
+		\begin{itemize}
+			\item Comprising only mini-transactions;
+			\item Satisfying the \textsc{UniqueVal} assumption.
+		\end{itemize}
+	\end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+	\fig{width = 0.90\textwidth}{figs/mtc-anomalies}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+	\fig{width = 0.80\textwidth}{figs/mtc-mariadb}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{itemize}
+		\item To infer \wrdep{} dependencies via \textsc{UniqueVal} assumption
+		\item To infer \wwdep{} dependencies via Read-Modify-Write patterns
+		\item To derive \rwdep{} dependencies via \wrdep{} and \wwdep
+	\end{itemize}
+
+	\fig{width = 0.60\textwidth}{figs/mtc-def}
+
+	\pause
+	\begin{description}
+		\centering
+		\item[\textsc{CheckSSER}] $\Theta(n^2)$
+		\item[\textsc{CheckSER}] $\Theta(n)$
+		\item[\textsc{CheckSI}] $\Theta(n)$
+	\end{description}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
