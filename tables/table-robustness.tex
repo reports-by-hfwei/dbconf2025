@@ -1,15 +1,24 @@
 \begin{table}[]
+\centering
+\renewcommand{\arraystretch}{1.8}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{|l|l|l|l|l|l|}
-\hline
-$I_1 \backslash I_2$ & PC                                            & SI                                                                                                  & SER                                                                                          & \multicolumn{1}{c|}{15-20} & \multicolumn{1}{c|}{总数} \\ \hline
-RU                      &                                               &                                                                                                     & {[}Ketsman PODS'20{]} （非分布式）充要条件                                                             & \multicolumn{1}{c|}{3}     & \multicolumn{1}{c|}{15} \\ \hline
-RC                      &                                               &                                                                                                     & {[}Ketsman PODS'20{]} （非分布式）充要条件 {[}Vandevoort VLDB'21{]} （非分布式）事务模板的充要条件，有实验数据，未开源          & \multicolumn{1}{c|}{0}     & \multicolumn{1}{c|}{10} \\ \hline
-RA                      &                                               &                                                                                                     &                                                                                              & \multicolumn{1}{c|}{3}     & \multicolumn{1}{c|}{25} \\ \hline
-CC                      & {[}Bouajjani ESOP'21{]} 充要条件，转化为 CC 对 SER 鲁棒性 & {[}Bouajjani ESOP'21{]} 充要条件，CC \textbackslash{}to PC \textbackslash{}land PC \textbackslash{}to SI & {[}Bernardi CONCUR'16{]} 充分条件 {[}Beillahi CONCUR'19{]} CC、CM、CCv 下充要条件                       &                            &                         \\ \hline
-PC                      & /                                             & {[}Bouajjani ESOP'21{]} 充要条件，依赖程序搜索                                                                 & {[}Bernardi CONCUR'16{]} 充分条件                                                                &                            &                         \\ \hline
-PSI                     & /                                             & {[}Cerone PODC'16{]} 充分条件                                                                           & {[}Bernardi CONCUR'16{]} 充分条件                                                                &                            &                         \\ \hline
-SI                      & /                                             & /                                                                                                   & {[}Fekete TODS'05{]} 充分条件 {[}Cerone PODC'16 \& JACM'18{]} 充要条件 {[}Bernardi CONCUR'16{]} 充分条件 &                            &                         \\ \hline
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	$I_1 \setminus I_2$ & \pc & \si & \ser & \multicolumn{1}{c|}{15-20} & \multicolumn{1}{c|}{总数}
+	\\ \hline
+	\ru  & & & {[}Ketsman PODS'20{]} （非分布式）充要条件 & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{15}
+	\\ \hline
+	\rc  & & & {[}Ketsman PODS'20{]} （非分布式）充要条件 {[}Vandevoort VLDB'21{]} （非分布式）事务模板的充要条件 & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{10}
+	\\ \hline
+	\ra  & & & & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{25}
+	\\ \hline
+	\tcc  & {[}Bouajjani ESOP'21{]} 充要条件，转化为 CC 对 SER 鲁棒性 & {[}Bouajjani ESOP'21{]} 充要条件，CC \textbackslash{}to PC \textbackslash{}land PC \textbackslash{}to SI & {[}Bernardi CONCUR'16{]} 充分条件 {[}Beillahi CONCUR'19{]} CC、CM、CCv 下充要条件                       &                            &
+	\\ \hline
+	\pc  & / & {[}Bouajjani ESOP'21{]} 充要条件，依赖程序搜索 & {[}Bernardi CONCUR'16{]} 充分条件 & &
+	\\ \hline
+	\psiso & / & {[}Cerone PODC'16{]} 充分条件 & {[}Bernardi CONCUR'16{]} 充分条件 & &
+	\\ \hline
+	\si  & / & /                                                                                                   & {[}Fekete TODS'05{]} 充分条件 {[}Cerone PODC'16 \& JACM'18{]} 充要条件 {[}Bernardi CONCUR'16{]} 充分条件 &                            &                         \\ \hline
 \end{tabular}
 }
 \end{table}
