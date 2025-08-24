@@ -1,0 +1,29 @@
+% rp-mil.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\begin{center}
+		\blue{RePMILA:arXiv2025}
+		\fig{width = 0.80\textwidth}{figs/rp-mil-arXiv2025}
+		\begin{columns}
+			\column{0.50\textwidth}
+				\pause
+				\fig{width = 0.90\textwidth}{figs/repmila-program}
+			\column{0.50\textwidth}
+				\pause
+				\fig{width = 0.90\textwidth}{figs/repmila-program}
+		\end{columns}
+		\pause
+		\vspace{0.30cm}
+		\red{Not support for predicate reads, \textsc{Insert}, \textsc{Delete}}
+	\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{arXiv2025 2501.18377v3 Using Read Promotion and Mixed Isolation Levels for Performant Yet Serializable Execution of Transaction Programs}
+% 	\textbf{Problems: } 许多 DBMS 默认使用 SI 等较低的隔离级别，以换取更高的性能。但这将处理并发异常（如写偏斜）的责任推给了应用程序开发者。目前的挑战在于，如何在不牺牲性能的前提下，为事务程序提供可串行化的正确性保证，从而简化开发。
+
+% 	\textbf{Contributions: }一种在多版本数据库中系统性地分配隔离级别给事务的框架，能够根据事务行为，自动分配最合适的隔离级别，在确保在所需正确性的前提下最大化性能。
+% \end{frame}
+% %%%%%%%%%%%%%%%%%%%%
