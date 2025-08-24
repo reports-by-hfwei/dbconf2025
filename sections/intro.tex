@@ -48,44 +48,44 @@
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{center}
-    \red{可串行化 (SER):}
-    所有事务的执行结果与某个串行执行的结果一致
+% \begin{frame}{}
+%   \begin{center}
+%     \red{可串行化 (SER):}
+%     所有事务的执行结果与某个串行执行的结果一致
 
-    \vspace{0.50cm}
-		\resizebox{0.50\textwidth}{!}{\input{tikz/isolation-ser-write-skew-tikz}}
-  \end{center}
-\end{frame}
+%     \vspace{0.50cm}
+% 		\resizebox{0.50\textwidth}{!}{\input{tikz/isolation-ser-write-skew-tikz}}
+%   \end{center}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{center}
-    \red{快照隔离 (SI):} 弱于 SER, 允许\blue{\it 写偏斜}数据异常
+% \begin{frame}{}
+%   \begin{center}
+%     \red{快照隔离 (SI):} 弱于 SER, 允许\blue{\it 写偏斜}数据异常
 
-    \vspace{0.50cm}
-		\resizebox{0.50\textwidth}{!}{\input{tikz/isolation-si-write-skew-tikz}}
+%     \vspace{0.50cm}
+% 		\resizebox{0.50\textwidth}{!}{\input{tikz/isolation-si-write-skew-tikz}}
 
-    \vspace{0.20cm}
-    \violet{快照读性质:} 每个事务从它开始时的数据库{\it 快照}中读取数据
-  \end{center}
-\end{frame}
+%     \vspace{0.20cm}
+%     \violet{快照读性质:} 每个事务从它开始时的数据库{\it 快照}中读取数据
+%   \end{center}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-  \begin{center}
-    \red{快照隔离 (SI):} 弱于 SER, 但不允许\blue{\it 更新丢失}数据异常
+% \begin{frame}{}
+%   \begin{center}
+%     \red{快照隔离 (SI):} 弱于 SER, 但不允许\blue{\it 更新丢失}数据异常
 
-    \vspace{0.30cm}
-    \resizebox{0.48\textwidth}{!}{\input{tikz/isolation-si-lost-update-tikz}}
-  \end{center}
+%     \vspace{0.30cm}
+%     \resizebox{0.48\textwidth}{!}{\input{tikz/isolation-si-lost-update-tikz}}
+%   \end{center}
 
-  \vspace{-0.50cm}
-  \violet{快照写性质:}
-    并发事务之间不能存在写冲突; 最多只有一个可以提交
-\end{frame}
+%   \vspace{-0.50cm}
+%   \violet{快照写性质:}
+%     并发事务之间不能存在写冲突; 最多只有一个可以提交
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
