@@ -7,8 +7,11 @@
 		\fig{width = 0.60\textwidth}{figs/mil-cav2025}
 
 		\vspace{0.50cm}
-		\textsc{Select} \\[5pt]
-		\red{\textsc{Insert} \qquad \textsc{Delete} \qquad \textsc{Update}}
+		SQL transactions: \textsc{Select, Insert, Update, Delete}
+
+		\pause
+		\vspace{0.50cm}
+		\red{Use $\wrdep$ (\textsf{write-read}) relation to model observations of operations}
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -16,14 +19,14 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
 	\begin{center}
-		\fig{width = 0.50\textwidth}{figs/mil-full-history}
+		\fig{width = 0.60\textwidth}{figs/mil-full-history}
 
-		\uncover<3->{
-			\begin{definition}[Full History and Client History]
-			\end{definition}
-		}
+		\begin{center}
+			\blue{Full History \red{\it vs.} (Observed) Client History}
+		\end{center}
 
-		\uncover<2->{\fig{width = 0.60\textwidth}{figs/mil-client-history}}
+		\pause
+		\fig{width = 0.70\textwidth}{figs/mil-client-history}
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -33,6 +36,7 @@
 	\begin{center}
 		Specifying isolation levels
 		using \textsf{\purple{so}}, \textsf{\green{wr}}, and \textsf{\brown{co}}
+		(on full histories)
 		\fig{width = 0.70\textwidth}{figs/mil-def}
 	\end{center}
 \end{frame}
@@ -40,7 +44,14 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-	\begin{theorem}[验证复杂度]
+	\begin{definition}[Verifying Client Histories]
+		A \blue{\it client history} satisfies $\mathcal{M}$
+		if it can be \red{$\wrdep$-extended} to a \purple{\it full history} which satisfies $\mathcal{M}$.
+	\end{definition}
+
+	\fig{width = 0.60\textwidth}{figs/mil-client-history}
+
+	\begin{theorem}[Complexity of Verifying Client Histories]
 		Verifying consistency of \red{client histories}
 		with $\ge \rc$ and a fixed number of $\ge 3$ sessions
 		is \textsf{NP-complete},
@@ -62,17 +73,12 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-	\begin{columns}
-		\column{0.50\textwidth}
-		  \fig{width = 0.95\textwidth}{figs/mil-alg3}
-		\column{0.50\textwidth}
-		  \fig{width = 0.95\textwidth}{figs/mil-alg4}
-	\end{columns}
-
-	\pause
-	\vspace{0.50cm}
 	\begin{center}
-		\red{$Q:$ 可否用于加速基于 SMT 求解器的验证过程?}
+		\fig{width = 0.70\textwidth}{figs/mil-alg3}
+		\vspace{0.20cm}
+		\red{$Q:$ Integrated with the SAT solver in \blue{Vbox:arXiv2025}?}
+		\vspace{0.20cm}
+		\fig{width = 0.70\textwidth}{figs/mil-alg4}
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%

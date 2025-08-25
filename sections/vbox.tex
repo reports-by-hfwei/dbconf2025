@@ -9,7 +9,8 @@
 		\vspace{0.50cm}
 		\textsc{Read} \\[6pt]
 		\textsc{Write} \\[6pt]
-		\red{\textsc{Pred-Read} (\textsc{Select})}
+		\red{\textsc{Pred-Read} (\textsc{Select})} \\[6pt]
+		\red{\textsc{Pred-Write} (\textsc{Insert, Update, Delete})} \\[6pt]
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -19,6 +20,10 @@
 	\begin{center}
 		(1) Modelling histories
 		\fig{width = 0.60\textwidth}{figs/vbox-history}
+
+		\pause
+		\vspace{0.30cm}
+		\red{$Q:$ How to verify it against \ser?}
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -27,10 +32,16 @@
 \begin{frame}{}
 	\begin{center}
 		(2) Define predicate dependencies
-		\fig{width = 0.60\textwidth}{figs/vbox-pred-deps}
+		\begin{columns}
+			\column{0.50\textwidth}
+				\fig{width = 0.90\textwidth}{figs/vbox-pred-deps}
+			\column{0.50\textwidth}
+				\fig{width = 1.00\textwidth}{figs/vbox-history}
+		\end{columns}
 
 		\pause
-		\red{$Q:$ Various definitions in the literature!}
+		\vspace{0.50cm}
+		\red{$Q:$ Various definitions in the literature! Are they all equivalent?}
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -42,20 +53,21 @@
 	\end{center}
 	\begin{columns}
 		\column{0.50\textwidth}
-			\fig{width = 0.95\textwidth}{figs/vbox-verify}
+			\fig{width = 1.00\textwidth}{figs/vbox-history}
 		\column{0.50\textwidth}
-		  \pause
-			\begin{theorem}[Serializability Theorem]
-				An \blue{observed history} is serializable if and only if
-				there exists a compatible \purple{complete history}
-				whose DSG has \red{no cycles}, and there are neither
-				aborted reads nor intermediate reads.
-			\end{theorem}
-			\pause
-			\begin{center}
-				\red{However, no PROOFs in the literature!}
-			\end{center}
+			\fig{width = 0.90\textwidth}{figs/vbox-verify}
 	\end{columns}
+
+	\pause
+	\begin{theorem}[Serializability Theorem]
+		An \blue{observed history} is serializable $\iff$
+		there exists a compatible \purple{complete history}
+		whose dependency graph is \red{acyclic}, and $\ldots$
+	\end{theorem}
+	\pause
+	\begin{center}
+		\red{However, no PROOFs in the literature!}
+	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -66,24 +78,36 @@
 	\end{center}
 	\begin{columns}
 		\column{0.50\textwidth}
-		  \[
-				\mathbb{F}_{x} = \set{t \mid t \vdash \writeevent(x, v)
-				  \land P_{t}(x, v) = \bot}
-			\]
-		  \[
-				\mathbb{T}_{x} = \set{t \mid t \vdash \writeevent(x, v)
-				  \land P_{t}(x, v) = \top}
-			\]
-			\[
-				\mathcal{E}(t) = \set{}
-			\]
+			\fig{width = 0.70\textwidth}{figs/sat-solver}
+		  % \[
+			% 	\mathbb{F}_{x} = \set{t \mid t \vdash \writeevent(x, v)
+			% 	  \land P_{t}(x, v) = \bot}
+			% \]
+		  % \[
+			% 	\mathbb{T}_{x} = \set{t \mid t \vdash \writeevent(x, v)
+			% 	  \land P_{t}(x, v) = \top}
+			% \]
+			% \[
+			% 	\mathcal{E}(t) = \set{}
+			% \]
 		\column{0.50\textwidth}
 		  \pause
 		  \begin{center}
-				Constraint Pruning
+				\blue{\it Constraint} Pruning
 				\fig{width = 0.60\textwidth}{figs/optimization}
-				Efficient Reachability Test
+				Efficient \blue{\it Reachability} Test
 			\end{center}
 	\end{columns}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{}
+% 	\begin{center}
+% 		% \fig{width = 0.50\textwidth}{figs/vbox-history}
+% 		% \vspace{0.30cm}
+% 		\red{\textsc{Insert}, \textsc{Update}, \textsc{Delete}}:
+% 		  \blue{predicate reads} + \blue{normal item writes}
+% 	\end{center}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%

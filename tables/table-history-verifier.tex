@@ -6,7 +6,7 @@
 \label{tab:my-table}
 \renewcommand{\arraystretch}{1.8}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 	\hline
 	\textbf{验证问题} &
   \textbf{复杂度} &
@@ -14,48 +14,51 @@
 	\textbf{一致性模型} &
   \textbf{会议} &
   \textbf{年份} &
-	\textbf{UniqueVal?} &
-	\textbf{数据模型}
+	\text{\textbf{\textsc{UniqueVal}}} &
+	\textbf{数据模型} &
+  \textbf{发展趋势}
   \\ \hline\hline
 	\multirow{9}{*}{\textbf{\incell{一般执行历史}{验证问题}}} &
   \multirow{7}{*}{\textsf{NP-complete}} &
-	dbcop & SER, SI & OOPSLA & 2019 & \yes & KV
+	dbcop & SER, SI & OOPSLA & 2019 & \yes & KV &
+	\multirow{9}{*}{\incell{更快}{更SQL}}
 	\\ \cline{3-8}
-  & & Cobra & SER & OSDI & 2020 & \yes & KV
+  & & Cobra & SER & OSDI & 2020 & \yes & KV &
 	\\ \cline{3-8}
-  & & PolySI & SI & VLDB & 2023 & \yes & KV
+  & & PolySI & SI & VLDB & 2023 & \yes & KV &
   \\ \cline{3-8}
-  & & Viper & SI & EuroSys & 2023 & \yes & KV
+  & & Viper & SI & EuroSys & 2023 & \yes & KV &
   \\ \cline{3-8}
-  & & \cellcolor{yellow!50} Vbox & SER & arXiv & 2025 & \yes & \cellcolor{green!50}SQL
+  & & \cellcolor{yellow!50} Vbox & SER & arXiv & 2025 & \yes & \cellcolor{green!50}SQL &
   \\ \cline{3-8}
   & & \cellcolor{yellow!50} \textsc{CheckConsistency} & Mixed
-  & CAV & 2025 & \yes & \cellcolor{green!50}SQL
+  & CAV & 2025 & \yes & \cellcolor{green!50}SQL &
   \\ \cline{3-8}
   & & \cellcolor{yellow!50} \textsc{Troubadour} & RC, SI, SER
-  & OOPSLA & 2025 & \no & \cellcolor{green!50}SQL
+  & OOPSLA & 2025 & \no & \cellcolor{green!50}SQL &
   \\ \cline{2-8}
   & \multirow{3}{*}{\textsf{Poly.}}
-  & dbcop & $\le$ TCC & OOPSLA & 2019 & \yes & KV
+  & dbcop & $\le$ TCC & OOPSLA & 2019 & \yes & KV &
   \\ \cline{3-8}
-  & & Plume & $\le$ TCC & OOPSLA & 2024 & \yes & KV
+  & & Plume & $\le$ TCC & OOPSLA & 2024 & \yes & KV &
   \\ \cline{3-8}
-  & & \cellcolor{yellow!50} AWDIT & $\le$ TCC & PLDI & 2025 & \yes & KV
-  \\ \hline
+  & & \cellcolor{yellow!50} AWDIT & $\le$ TCC & PLDI & 2025 & \yes & KV &
+  \\ \hline\hline
 	\multirow{6}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}特定执行历史\\ 验证问题\end{tabular}}} &
   \multirow{6}{*}{\textsf{Poly.}} &
-	\textsc{Elle} & G0, G1, G2 Anomalies & VLDB & 2021 & \yes & KV
+	\textsc{Elle} & G0, G1, G2 Anomalies & VLDB & 2021 & \yes & KV &
+  \multirow{6}{*}{更多类信息}
   \\ \cline{3-8}
-  & & Emme & SER & EuroSys & 2024 & \no & \cellcolor{green!50}SQL
+  & & Emme & SER & EuroSys & 2024 & \no & \cellcolor{green!50}SQL &
 	\\ \cline{3-8}
 	& & \cellcolor{yellow!50} \textsc{Chronos, Aion} & SER, SI
-  & ICSE & 2025 & \no & KV
+  & ICSE & 2025 & \no & KV &
 	\\ \cline{3-8}
-	& & \cellcolor{yellow!50} MTC & SSER, SER, SI & ICSE & 2025 & \yes & KV
+	& & \cellcolor{yellow!50} MTC & SSER, SER, SI & ICSE & 2025 & \yes & KV &
 	\\ \cline{3-8}
-	& & \cellcolor{yellow!50} WriteCheck & RU, RC, RR, SER & VLDB & 2025 & \no & \cellcolor{green!50}SQL
+	& & \cellcolor{yellow!50} WriteCheck & RU, RC, RR, SER & VLDB & 2025 & \no & \cellcolor{green!50}SQL &
 	\\ \cline{3-8}
-	& & \cellcolor{yellow!50} IsoRel & RU, RC, RR, SER & ISSTA & 2025 & \no & \cellcolor{green!50}SQL
+	& & \cellcolor{yellow!50} IsoRel & RU, RC, RR, SER & ISSTA & 2025 & \no & \cellcolor{green!50}SQL &
 	\\ \hline
 \end{tabular}%
 }
