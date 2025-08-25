@@ -4,11 +4,15 @@
 \begin{frame}{}
 	\begin{center}
 		\blue{\textsc{Troubadour}:OOPSLA2025}
-		\fig{width = 0.60\textwidth}{figs/obs-oopsla2025}
+		\fig{width = 0.80\textwidth}{figs/obs-oopsla2025}
 
 		\pause
 		\vspace{0.50cm}
 		\fig{width = 0.90\textwidth}{figs/obs-history}
+
+		\pause
+		\vspace{0.20cm}
+		\red{$Q:$ How to model \textsf{CALL Transfer$(1, 2, 10)$}?}
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -20,7 +24,7 @@
 
 		\pause
 		\vspace{0.50cm}
-		\red{假设:} 所有事务按照提交时间戳先后顺序进行执行
+		\blue{假设: 所有事务按照提交时间戳先后顺序进行执行}
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -108,7 +112,7 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
 	\[
-		T_{1}\quad T_{2}\quad \red{T_{3} (\no)}\quad T_{4}
+		T_{1}\quad T_{2}\quad \red{T_{3} \;(\text{\no})}\quad T_{4}
 	\]
 	\fig{width = 0.90\textwidth}{figs/obs-history}
 
@@ -126,15 +130,16 @@
 	\pause
 	\vspace{-0.40cm}
 	\[
-		\phi \land \psi \equiv \red{\false}
+		\phi \land \lgray{\psi} \equiv \red{\false}
 	\]
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-	\fig{width = 0.75\textwidth}{figs/obs-semantics}
-	\fig{width = 0.70\textwidth}{figs/obs-isolation}
+	\fig{width = 0.70\textwidth}{figs/obs-semantics}
+	\pause
+	\fig{width = 0.65\textwidth}{figs/obs-isolation}
 	% \begin{columns}
 	% 	\column{0.50\textwidth}
 	% 	  \fig{width = 0.95\textwidth}{figs/obs-semantics}
@@ -146,7 +151,14 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-	\fig{width = 0.90\textwidth}{figs/obs-bank}
-	\fig{width = 0.90\textwidth}{figs/obs-benchmark}
+	\begin{center}
+		\fig{width = 0.90\textwidth}{figs/obs-bank}
+		\vspace{0.30cm}
+		\uncover<2->{
+			\red{$Q:$ More efficient? Design dedicated SMT solvers?}
+		}
+		\vspace{0.30cm}
+		\fig{width = 0.90\textwidth}{figs/obs-benchmark}
+	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
