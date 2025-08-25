@@ -3,6 +3,9 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \fig{width = 0.65\textwidth}{figs/veri-robustness}
+	\begin{center}
+		\purple{\Large 先走马观花览全局, 再浮光掠影观局部}
+	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -12,34 +15,43 @@
 		Program $\mathcal{P}$ is \blue{\it robust}
 		against isolation level $I_{1}$ relative to $I_{2} \sqsupseteq I_{1}$
 
-		\fig{width = 0.60\textwidth}{figs/robustness}
+		\begin{columns}
+			\column{0.50\textwidth}
+				\fig{width = 0.80\textwidth}{figs/robustness}
+			\column{0.50\textwidth}
+				\fig{width = 0.85\textwidth}{figs/best-of-both-worlds-i1-i2}
+		\end{columns}
 
-		{\it if } all behaviors of $\mathcal{P}$ under $I_{1}$
-		are also $I_{2}$-consistent.
+		\vspace{0.60cm}
+		{\it if} all behaviors of $\mathcal{P}$ under $I_{1}$
+		are also $I_{2}$-consistent
 	\end{center}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{}
+% 	\begin{center}
+% 		\blue{TPC-C} is \emph{robust} against \si{} relative to \ser.
+
+% 		\fig{width = 0.60\textwidth}{figs/best-of-both-worlds-i1-i2}
+% 	\end{center}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
 	\begin{center}
-		\blue{TPC-C} is \emph{robust} against \si{} relative to \ser.
+    $I_{1} \setminus I_{2}:$ Robustness against $I_{1}$ relative to $I_{2}$
+		\input{tables/table-robustness}
 
-		\fig{width = 0.60\textwidth}{figs/best-of-both-worlds-i1-i2}
+		\pause
+		\vspace{0.10cm}
+		``The far majority of this work focused on
+			a \blue{\it homogeneous} setting
+			where all transactions are allocated
+			the \blue{\it same} isolation level.''
 	\end{center}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-	\input{tables/table-robustness}
-
-	\pause
-	\vspace{0.30cm}
-	``The far majority of this work focused on
-	  a \blue{\it homogeneous} setting
-		where all transactions are allocated
-		the \blue{\it same} isolation level.''
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 

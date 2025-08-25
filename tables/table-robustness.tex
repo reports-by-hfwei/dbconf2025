@@ -1,15 +1,15 @@
 \begin{table}[]
 \centering
-\caption{$I_{1} \setminus I_{2}:$ Robustness against $I_{1}$ relative to $I_{2}$.}
+% \caption{$I_{1} \setminus I_{2}:$ Robustness against $I_{1}$ relative to $I_{2}$.}
 \renewcommand{\arraystretch}{1.8}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|c||c|c|c|}
 	\hline
-	$I_1 \setminus I_2$ & \pc & \si & \ser
+	\cellcolor{red!50}{$I_1 \setminus I_2$} & \pc & \cellcolor{green!50}{\si} & \cellcolor{green!50}{\ser}
 	\\ \hline\hline
 	\ru & & & [Ketsman PODS'2020\&TODS'2022] (非分布式)充要条件
 	\\ \hline
-	\rc & & & \incell{[Ketsman PODS'2020\&TODS'2022] (非分布式)充要条件}{\incell{[Vandevoort VLDB'2021] (非分布式)事务模板充要条件}{[Vandevoort EDBT'2023] (非分布式)控制结构; Predicate-read, \textsc{Insert}, \textsc{Delete}}}
+	\cellcolor{blue!50}{\rc} & & & \incell{[Ketsman PODS'2020\&TODS'2022] (非分布式)充要条件}{\incell{[Vandevoort VLDB'2021] (非分布式)事务模板充要条件}{\incell{[Vandevoort EDBT'2023] (非分布式)控制结构;}{Predicate-read, \textsc{Insert}, \textsc{Delete}}}}
 	\\ \hline
 	\ra & & &
 	\\ \hline
@@ -23,7 +23,7 @@
 	\psiso & / &
 				 & [Bernardi CONCUR'2016] 充分条件
 	\\ \hline
-	\si  & / & / & \incell{[Fekete TODS'2005] 充分条件}{[Bernardi CONCUR'2016] 充分条件}
+	\cellcolor{blue!50}{\si} & / & / & \incell{[Fekete TODS'2005] 充分条件}{[Bernardi CONCUR'2016] 充分条件}
 	\\ \hline
 \end{tabular}
 }

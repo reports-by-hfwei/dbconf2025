@@ -5,41 +5,40 @@
 	\begin{center}
 		\blue{TxnSails:VLDB2025}
 		\fig{width = 0.80\textwidth}{figs/txnsails-vldb2025}
-
-		\pause
 		\fig{width = 0.30\textwidth}{figs/static-dynamic}
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{}
+% 	\begin{center}
+% 		\fig{width = 0.60\textwidth}{figs/txnsails-bank}
+% 		\fig{width = 0.70\textwidth}{figs/txnsails-bank-balance}
+% 		\pause
+% 		\red{High abort rate \qquad Non-adaptive}
+% 	\end{center}
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
 	\begin{center}
-		\fig{width = 0.60\textwidth}{figs/txnsails-bank}
-		\fig{width = 0.70\textwidth}{figs/txnsails-bank-balance}
-		\pause
-		\red{High abort rate \qquad Non-adaptive}
+		\red{TS}: commit transactions according to the \blue{\it dynamic dependency order}
+		\fig{width = 0.60\textwidth}{figs/txnsails-overview}
+		\red{TG}: cross-isolation validation during isolation transition
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-	\fig{width = 0.60\textwidth}{figs/txnsails-overview}
-	\pause
-	\red{TS} tries to ensure the \blue{\it commit order}
-	is consistent with the \blue{\it dynamic dependency order}.
-\end{frame}
+% \begin{frame}{}
+% 	\fig{width = 0.70\textwidth}{figs/txnsails-civ}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-	\fig{width = 0.70\textwidth}{figs/txnsails-civ}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-	\fig{width = 0.65\textwidth}{figs/txnsails-bank-perf}
-\end{frame}
+% \begin{frame}{}
+% 	\fig{width = 0.65\textwidth}{figs/txnsails-bank-perf}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
