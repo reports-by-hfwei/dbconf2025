@@ -1,0 +1,72 @@
+% appendix.tex
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\[
+		d_{0}[\acctone] = 100 \quad d_{0}[\accttwo] = 300 \qquad \blue{\text{(Strong SI)}}
+	\]
+	\fig{width = 0.90\textwidth}{figs/obs-history}
+	\pause
+	\[
+		d_{1}[\acctone] = 90 \quad
+		d_{1}[\accttwo] = 310 \quad
+		r_{1} \equiv \bot \quad
+		\cons_{1} \equiv \true \quad
+		\psi \equiv \true
+	\]
+	\vspace{-0.30cm}
+	\pause
+	\[
+		% d_{2}[\acctone] = 90 \quad
+		d_{2}[\accttwo] = ite(\id_{2}^{\accttwo} \ge 1, 410, 400) \quad
+		r_{2} = \bot \quad
+		\cons_{2} \equiv \true \quad
+		\psi \equiv \id_{2}^{\accttwo} = 1
+	\]
+	\vspace{-0.40cm}
+	\[
+		\phi \land \psi \equiv \id_{2}^{\accttwo} = 1 \equiv \green{\true}
+	\]
+	\pause
+	\[
+		d_{3}[\accttwo] = \ite(\id_{3}^{\accttwo} \ge 2,
+		  \ite(\id_{2}^{\accttwo} \ge 1, 410, 400),
+			\ite(\id_{3}^{\accttwo} \ge 1, 310, 300)) + 10
+	\]
+	\vspace{-0.40cm}
+	\[
+		\psi \equiv \id_{3}^{\accttwo} = 1 \land
+		  ite(\id_{2}^{\accttwo} \ge 1, 410, 400) = d_{3}[\accttwo]
+	\]
+	\vspace{-0.40cm}
+	\[
+		\phi \land \psi \equiv \red{\false}
+	\]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\[
+		T_{1}\quad T_{2}\quad \red{T_{3} \;(\text{\no})}\quad T_{4}
+	\]
+	\fig{width = 0.90\textwidth}{figs/obs-history}
+
+	\pause
+	\[
+		r_{4}^{\accttwo} = \ite(\id_{4}^{\accttwo} \ge 3,
+		  \ite(\id_{2}^{\accttwo} \ge 1, 410, 400),
+			\ite(\id_{4}^{\accttwo}) \ge 1, 310, 300)
+	\]
+	\pause
+	\vspace{-0.40cm}
+	\[
+		\phi_{4} \equiv r_{4}^{\accttwo} = 420
+	\]
+	\pause
+	\vspace{-0.40cm}
+	\[
+		\phi \land \lgray{\psi} \equiv \red{\false}
+	\]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%

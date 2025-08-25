@@ -26,20 +26,31 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-	\begin{center}
-		Two auxiliary columns: $\rowid$, $\wlist$
-		\fig{width = 0.95\textwidth}{figs/isorel-instrumentation}
-	\end{center}
+	\fig{width = 1.00\textwidth}{figs/isorel-deps}
+
+	\pause
+	\vspace{0.50cm}
+	\fig{width = 1.00\textwidth}{figs/isorel-deps-wr}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+	\fig{width = 1.00\textwidth}{figs/isorel-deps-ww}
+	\pause
+	\vspace{0.50cm}
+	\fig{width = 1.00\textwidth}{figs/isorel-deps-rw}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
 	\begin{center}
-		\fig{width = 1.00\textwidth}{figs/isorel-deps}
-		\pause
-		\fig{width = 0.80\textwidth}{figs/isorel-deps-delete}
-		\fig{width = 0.80\textwidth}{figs/isorel-deps-selectforupdate}
+		Two auxiliary columns: \blue{$\rowid$}, \blue{$\wlist$}
+		\fig{width = 0.95\textwidth}{figs/isorel-instrumentation}
+
+		% \fig{width = 0.80\textwidth}{figs/isorel-deps-delete}
+		% \fig{width = 0.80\textwidth}{figs/isorel-deps-selectforupdate}
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -55,6 +66,8 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
 	\begin{center}
+		\fig{width = 0.50\textwidth}{figs/limitation}
+		\red{No \textsf{Pred}-\wrdep; No \textsf{Pred}-\rwdep}
 		\fig{width = 1.00\textwidth}{figs/isorel-pred-deps}
 	\end{center}
 \end{frame}

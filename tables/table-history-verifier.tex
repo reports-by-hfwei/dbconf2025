@@ -6,7 +6,7 @@
 \label{tab:my-table}
 \renewcommand{\arraystretch}{1.8}
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\begin{tabular}{|c||c|c|c|c|c|c|c||c|}
 	\hline
 	\textbf{验证问题} &
   \textbf{复杂度} &
@@ -16,7 +16,7 @@
   \textbf{年份} &
 	\text{\textbf{\textsc{UniqueVal}}} &
 	\textbf{数据模型} &
-  \textbf{发展趋势}
+  \textbf{\cellcolor{purple!50}{发展趋势}}
   \\ \hline\hline
 	\multirow{9}{*}{\textbf{\incell{一般执行历史}{验证问题}}} &
   \multirow{7}{*}{\textsf{NP-complete}} &
@@ -47,7 +47,7 @@
 	\multirow{6}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}特定执行历史\\ 验证问题\end{tabular}}} &
   \multirow{6}{*}{\textsf{Poly.}} &
 	\textsc{Elle} & G0, G1, G2 Anomalies & VLDB & 2021 & \yes & KV &
-  \multirow{6}{*}{更多类信息}
+  \multirow{6}{*}{\incell{多种类}{信息}}
   \\ \cline{3-8}
   & & Emme & SER & EuroSys & 2024 & \no & \cellcolor{green!50}SQL &
 	\\ \cline{3-8}

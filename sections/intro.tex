@@ -15,8 +15,7 @@
 
   \vspace{0.30cm}
   \begin{center}
-    \red{隔离性} (Isolation) 要求并发事务互不干扰, \\[3pt]
-    避免上层业务产生数据异常 (Anomalies)
+    \red{隔离性} (Isolation) 要求并发事务互不干扰, 避免数据异常 (Anomalies)
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -28,6 +27,20 @@
 
     \vspace{0.30cm}
     \fig{width = 0.70\textwidth}{figs/tcm}
+
+    \begin{columns}
+      \column{0.15\textwidth}
+      \column{0.70\textwidth}
+        \begin{description}
+          \item[\ru:] Read Uncommitted
+          \item[\rc:] Read Committed
+          \item[\ra:] Read Atomicity
+          \item[\tcc:] Transactional Causal Consistency
+          \item[\si:] Snapshot Isolation
+          \item[\ser:] Serializability
+        \end{description}
+      \column{0.15\textwidth}
+    \end{columns}
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -113,6 +126,6 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
-  \fig{width = 0.75\textwidth}{figs/verification-problems}
+  \fig{width = 0.65\textwidth}{figs/verification-problems}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
