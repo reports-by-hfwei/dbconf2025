@@ -8,11 +8,18 @@
 
 		\vspace{0.30cm}
 		\begin{itemize}
-			\setlength{\itemsep}{8pt}
 			\item Propose \emph{write-specific serializability} (WSS), weaker than \ser
 			\item To verify histories against WSS
 		\end{itemize}
 	\end{center}
+
+	\pause
+	\begin{definition}[Write-Specific Serializability (WSS)]
+		A schedule of \blue{\it concurrent} transactions
+		should produce \purple{\it the same final database state}
+		as that produced by a corresponding \blue{\it serial} schedule
+		of the same transactions.
+	\end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -24,30 +31,30 @@
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-	\begin{definition}[Write-Specific Serializability (WSS)]
-		A schedule of \blue{\it concurrent} transactions
-		should produce \purple{\it the same final database state}
-		as that produced by a corresponding \blue{\it serial} schedule
-		of the same transactions.
-	\end{definition}
+% \begin{frame}{}
+% 	\begin{definition}[Write-Specific Serializability (WSS)]
+% 		A schedule of \blue{\it concurrent} transactions
+% 		should produce \purple{\it the same final database state}
+% 		as that produced by a corresponding \blue{\it serial} schedule
+% 		of the same transactions.
+% 	\end{definition}
 
-	\pause
-	\vspace{0.30cm}
-	\begin{itemize}
-		\setlength{\itemsep}{8pt}
-		\item How effectively can WSS expose critical txBugs?
-		\item How are WSS violations triggered?
-		\item How to infer the serial schedules under WSS?
-	\end{itemize}
-\end{frame}
+% 	\pause
+% 	\vspace{0.30cm}
+% 	\begin{itemize}
+% 		\setlength{\itemsep}{8pt}
+% 		\item How effectively can WSS expose critical txBugs?
+% 		\item How are WSS violations triggered?
+% 		\item How to infer the serial schedules under WSS?
+% 	\end{itemize}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
 	\begin{itemize}
 		\centering
-		\item How effectively can WSS expose critical txBugs?
+		\item How \red{\it effectively} can WSS expose critical txBugs?
 	\end{itemize}
 
 	\fig{width = 0.80\textwidth}{figs/writecheck-35-32}
@@ -56,22 +63,22 @@
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-	\begin{itemize}
-		\centering
-		\item How are WSS violations triggered?
-	\end{itemize}
+% \begin{frame}{}
+% 	\begin{itemize}
+% 		\centering
+% 		\item How are WSS violations triggered?
+% 	\end{itemize}
 
-	\fig{width = 0.80\textwidth}{figs/writecheck-finding3}
-	\fig{width = 0.80\textwidth}{figs/writecheck-finding4}
-\end{frame}
+% 	\fig{width = 0.80\textwidth}{figs/writecheck-finding3}
+% 	\fig{width = 0.80\textwidth}{figs/writecheck-finding4}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
 	\begin{itemize}
 		\centering
-		\item How are WSS violations triggered?
+		\item How to infer the \red{\it serial} schedules under WSS?
 	\end{itemize}
 
 	\fig{width = 0.80\textwidth}{figs/writecheck-finding2}
