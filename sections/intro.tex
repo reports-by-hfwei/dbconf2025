@@ -8,14 +8,15 @@
 
   \begin{columns}
     \column{0.50\textwidth}
-      \fig{width = 0.95\textwidth}{figs/db-si}
+      \fig{width = 0.90\textwidth}{figs/db-si}
     \column{0.50\textwidth}
-      \fig{width = 0.95\textwidth}{figs/acid}
+      \fig{width = 0.85\textwidth}{figs/acid}
   \end{columns}
 
   \vspace{0.30cm}
   \begin{center}
-    \red{隔离性}要求并发执行的事务互不干扰, 避免上层业务产生数据异常
+    \red{隔离性} (Isolation) 要求并发事务互不干扰, \\[3pt]
+    避免上层业务产生数据异常 (Anomalies)
   \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -102,9 +103,9 @@
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
   \begin{center}
-    以事务一致性模型为核心的正确性问题
+    以事务一致性模型为核心的正确性问题至关重要
 
-    \vspace{0.50cm}
+    \vspace{0.30cm}
     \fig{width = 0.60\textwidth}{figs/correctness}
   \end{center}
 \end{frame}
