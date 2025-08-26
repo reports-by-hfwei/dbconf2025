@@ -10,7 +10,6 @@
 		\begin{itemize}
 			\item Using \emph{commit timestamps} to infer the commit order
 			\item Using \emph{start timestamps} to infer the read snapshot (for \si)
-			\item Online verification by \emph{\purple{simulating}} transaction execution
 		\end{itemize}
 	\end{center}
 \end{frame}
@@ -18,6 +17,11 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+	\begin{center}
+		Verification by \emph{\purple{simulating}} transaction execution \\
+		in \blue{\it increasing timestamp order}
+	\end{center}
+
 	\begin{columns}
 		\column{0.50\textwidth}
 		  \fig{width = 1.00\textwidth}{figs/chronos-alg}
@@ -25,7 +29,6 @@
 		  \fig{width = 1.00\textwidth}{figs/timekiller-example}
 	\end{columns}
 
-	\pause
 	\vspace{0.80cm}
 	\[
 		O(n \log n + m) \quad
@@ -36,6 +39,10 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{frame}{}
+	\begin{center}
+		Cannot sort the transactions in the \purple{\it online} setting
+	\end{center}
+
 	\fig{width = 0.95\textwidth}{figs/aion-alg}
 
 	\vspace{0.50cm}
@@ -53,21 +60,21 @@
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-	\fig{width = 0.60\textwidth}{figs/timekiller-flow}
+% \begin{frame}{}
+% 	\fig{width = 0.60\textwidth}{figs/timekiller-flow}
 
-	\begin{columns}
-		\column{0.33\textwidth}
-		  \fig{width = 0.70\textwidth}{figs/tidb}
-			\centerline{CDC + logging}
-		\column{0.33\textwidth}
-		  \fig{width = 0.70\textwidth}{figs/ydb}
-			\centerline{WAL}
-		\column{0.33\textwidth}
-		  \fig{width = 0.70\textwidth}{figs/dgraph}
-			\centerline{HTTP responses}
-	\end{columns}
-\end{frame}
+% 	\begin{columns}
+% 		\column{0.33\textwidth}
+% 		  \fig{width = 0.70\textwidth}{figs/tidb}
+% 			\centerline{CDC + logging}
+% 		\column{0.33\textwidth}
+% 		  \fig{width = 0.70\textwidth}{figs/ydb}
+% 			\centerline{WAL}
+% 		\column{0.33\textwidth}
+% 		  \fig{width = 0.70\textwidth}{figs/dgraph}
+% 			\centerline{HTTP responses}
+% 	\end{columns}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
