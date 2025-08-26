@@ -6,13 +6,21 @@
 		\blue{\textsc{Troubadour}:OOPSLA2025}
 		\fig{width = 0.80\textwidth}{figs/obs-oopsla2025}
 
-		\pause
-		\vspace{0.50cm}
+		% \pause
+		\vspace{0.30cm}
 		\fig{width = 0.90\textwidth}{figs/obs-history}
 
 		\pause
-		\vspace{0.20cm}
-		\red{$Q:$ How to model \textsf{CALL Transfer$(1, 2, 10)$}?}
+		\red{$Q:$ How to model \textsf{$t_{3}:$ CALL Transfer$(1, 2, 10)$}?}
+
+		\pause
+		\vspace{0.30cm}
+		\blue{$\readevent(\acctone, 100) \quad \readevent(\accttwo, 100) \quad
+		  \writeevent(\acctone, 90) \quad \writeevent(\accttwo, 110)$}
+
+		\pause
+		\green{$\readevent(\acctone, t_{x}) \quad \readevent(\accttwo, t_{y}) \quad
+		  \writeevent(\acctone, t_{x} - 10) \quad \writeevent(\accttwo, t_{y} + 10)$}
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%
@@ -22,7 +30,7 @@
 	\begin{center}
 		\fig{width = 0.70\textwidth}{figs/obs-flow}
 
-		\pause
+		% \pause
 		\vspace{0.50cm}
 		\blue{假设: 所有事务按照提交时间戳先后顺序进行执行}
 	\end{center}
@@ -30,46 +38,46 @@
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-	\[
-		T_{1}\quad T_{2}\quad T_{3}\quad \ldots\quad T_{n}
-	\]
-	\begin{columns}
-		\column{0.40\textwidth}
-			\fig{width = 0.90\textwidth}{figs/obs-flow}
-		\column{0.60\textwidth}
-		  \begin{itemize}
-				\item $o_{i}$: observed response after $T_{i}$
-				\item $d_{i}$: system state after $T_{i}$
-				\item $r_{i}$: expected response after $T_{i}$
-				\item $C_{i}$: semantic constraints on $\tuple{d_{i}, r_{i}}$
-				\item \red{$\id_{i}^{x} = j$}: $T_{i}$ reads $x$ from $T_{j}$
-			\end{itemize}
-	\end{columns}
-	\pause
-	\[
-		\tuple{(d_{1}, r_{1})} \cdot C_{1} \quad
-		\tuple{(d_{2}, r_{2})} \cdot C_{1} \quad
-		\tuple{(d_{3}, r_{3})} \cdot C_{2} \quad\ldots\quad
-		\tuple{(d_{n}, r_{n})} \cdot C_{n}
-	\]
-	\pause
-	\[
-		\phi \equiv \bigwedge_{i=1}^{n} C_{i} \land (r_{i} = o_{i})
-	\]
-	\pause
-	\[
-		\blue{\psi: \text{Isolation Correctness Constraint}}
-	\]
-\end{frame}
+% \begin{frame}{}
+% 	\[
+% 		T_{1}\quad T_{2}\quad T_{3}\quad \ldots\quad T_{n}
+% 	\]
+% 	\begin{columns}
+% 		\column{0.40\textwidth}
+% 			\fig{width = 0.90\textwidth}{figs/obs-flow}
+% 		\column{0.60\textwidth}
+% 		  \begin{itemize}
+% 				\item $o_{i}$: observed response after $T_{i}$
+% 				\item $d_{i}$: system state after $T_{i}$
+% 				\item $r_{i}$: expected response after $T_{i}$
+% 				\item $C_{i}$: semantic constraints on $\tuple{d_{i}, r_{i}}$
+% 				\item \red{$\id_{i}^{x} = j$}: $T_{i}$ reads $x$ from $T_{j}$
+% 			\end{itemize}
+% 	\end{columns}
+% 	\pause
+% 	\[
+% 		\tuple{(d_{1}, r_{1})} \cdot C_{1} \quad
+% 		\tuple{(d_{2}, r_{2})} \cdot C_{1} \quad
+% 		\tuple{(d_{3}, r_{3})} \cdot C_{2} \quad\ldots\quad
+% 		\tuple{(d_{n}, r_{n})} \cdot C_{n}
+% 	\]
+% 	\pause
+% 	\[
+% 		\phi \equiv \bigwedge_{i=1}^{n} C_{i} \land (r_{i} = o_{i})
+% 	\]
+% 	\pause
+% 	\[
+% 		\blue{\psi: \text{Isolation Correctness Constraint}}
+% 	\]
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
-\begin{frame}{}
-	% \fig{width = 0.70\textwidth}{figs/obs-semantics}
-	% \pause
-	\fig{width = 0.85\textwidth}{figs/obs-isolation}
-\end{frame}
+% \begin{frame}{}
+% 	% \fig{width = 0.70\textwidth}{figs/obs-semantics}
+% 	% \pause
+% 	\fig{width = 0.85\textwidth}{figs/obs-isolation}
+% \end{frame}
 %%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
@@ -77,9 +85,9 @@
 	\begin{center}
 		\fig{width = 0.90\textwidth}{figs/obs-bank}
 		\vspace{0.30cm}
-		\uncover<2->{
+		% \uncover<2->{
 			\red{$Q:$ More efficient? Design dedicated SMT solvers?}
-		}
+		% }
 		\vspace{0.30cm}
 		\fig{width = 0.90\textwidth}{figs/obs-benchmark}
 	\end{center}
